@@ -7,52 +7,52 @@
 
 import Foundation
 
-public class SimpleAsynchronousOperation: NSOperation {
+open class SimpleAsynchronousOperation: Operation {
     
-    public final override var asynchronous: Bool {
+    public final override var isAsynchronous: Bool {
         return true
     }
 
-    private var _executing = false
-    public final override var executing : Bool {
-        return _executing
+    fileprivate var _executing = false
+    public final override var isExecuting : Bool {
+        return isCancelled ? false : _executing
     }
     
-    private var _finished = false
-    public final override var finished : Bool {
-        return _finished
+    fileprivate var _finished = false
+    public final override var isFinished : Bool {
+        return isCancelled ? true : _finished
     }
     
-    private let executingKey = "executing"
-    private let finishedKey = "finished"
-    public override func start() {
-        guard !finished || !executing else {
+    fileprivate let executingKey = "executing"
+    fileprivate let finishedKey = "finished"
+    open override func start() {
+        guard !isFinished || !isExecuting else {
             return
         }
-        willChangeValueForKey(executingKey)
+        willChangeValue(forKey: executingKey)
         _executing = true
-        didChangeValueForKey(executingKey)
+        didChangeValue(forKey: executingKey)
         main()
     }
     
-    public override func main() {
-        finishOperation()
+    open override func main() {
+        finish()
     }
     
-    public final func finishOperationIfNotCancelled() {
-        guard !cancelled else {
+    open override func cancel() {
+        super.cancel()
+    }
+    
+    public final func finish() {
+        guard !isCancelled else {
             return
         }
-        finishOperation()
-    }
-    
-    public final func finishOperation() {
-        willChangeValueForKey(finishedKey)
-        willChangeValueForKey(executingKey)
+        willChangeValue(forKey: finishedKey)
+        willChangeValue(forKey: executingKey)
         _executing = false
         _finished = true
-        didChangeValueForKey(executingKey)
-        didChangeValueForKey(finishedKey)
+        didChangeValue(forKey: executingKey)
+        didChangeValue(forKey: finishedKey)
         completionBlock?()
         completionBlock = nil
     }
