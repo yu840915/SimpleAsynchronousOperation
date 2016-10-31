@@ -3,7 +3,6 @@
 //  SimpleAsynchronousOperation
 //
 //  Created by small on 5/8/16.
-//  Copyright © 2016 small. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
