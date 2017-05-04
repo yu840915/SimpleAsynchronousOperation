@@ -14,6 +14,7 @@
 		8EED092C1EBB25F8005665A2 /* SimpleAsynchronousOperation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EED09231EBB25F8005665A2 /* SimpleAsynchronousOperation.framework */; };
 		8EED09311EBB25F8005665A2 /* SimpleAsynchronousOperation_Mac_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EED09301EBB25F8005665A2 /* SimpleAsynchronousOperation_Mac_Tests.swift */; };
 		8EED09331EBB25F8005665A2 /* SimpleAsynchronousOperation(Mac).h in Headers */ = {isa = PBXBuildFile; fileRef = 8EED09251EBB25F8005665A2 /* SimpleAsynchronousOperation(Mac).h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EED09421EBB2A12005665A2 /* SimpleAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FB87A81CDF7E5600D79090 /* SimpleAsynchronousOperation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -337,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EED09421EBB2A12005665A2 /* SimpleAsynchronousOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +581,7 @@
 		8EED09361EBB25F8005665A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -600,6 +603,7 @@
 		8EED09371EBB25F8005665A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -655,6 +659,7 @@
 				8EED09351EBB25F8005665A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EED09391EBB25F8005665A2 /* Build configuration list for PBXNativeTarget "SimpleAsynchronousOperation(Mac)Tests" */ = {
 			isa = XCConfigurationList;
@@ -663,6 +668,7 @@
 				8EED09371EBB25F8005665A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
