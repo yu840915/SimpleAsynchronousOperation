@@ -26,7 +26,7 @@ open class SimpleAsynchronousOperation: Operation {
     fileprivate let executingKey = "executing"
     fileprivate let finishedKey = "finished"
     open override func start() {
-        guard !isFinished || !isExecuting else {
+        guard !isFinished && !isExecuting else {
             return
         }
         willChangeValue(forKey: executingKey)
